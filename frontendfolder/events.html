@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | cyperX Symposium | Adithya Institute of Technology</title>
+  <meta name="description" content="Explore the technical and non-technical events across all departments at cyperX, including CSE, ECE, EEE, MECH, CIVIL, IT, and AIDS.">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Bar for Announcements and Quick Links -->
+  <div class="top-bar">
+    <div class="top-bar-container">
+      <div class="top-bar-announcement">
+        <i class="fa-solid fa-bullhorn"></i> Paper Submission Deadline: <strong>March 10, 2026</strong>
+      </div>
+      <div class="top-bar-links">
+        <span>Quick Links:</span>
+        <a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+        <a href="events.html"><i class="fa-solid fa-scroll"></i> Events</a>
+        <a href="register.html"><i class="fa-solid fa-user-plus"></i> Register</a>
+        <a href="contact.html"><i class="fa-solid fa-phone"></i> Helpline</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header id="main-header">
+    <div id="nav-container">
+      <a href="index.html" id="nav-logo">
+        <i class="fa-solid fa-atom text-gradient"></i><span>cyperX</span>
+      </a>
+      
+      <!-- Responsive Navigation Menu -->
+      <nav class="nav-links" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="events.html" class="nav-link active">Events</a>
+        <a href="register.html" class="nav-link">Register</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      
+      <div>
+        <a href="register.html" class="cta-btn">Register Now</a>
+        <button id="menu-toggle-btn" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Section Header -->
+    <div class="section-title">
+      <h2>Departmental <span>Events</span></h2>
+    </div>
+
+    <!-- Overview Statement -->
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem;">
+      Choose from our wide array of technical challenges and creative contests. Events are conducted by all major engineering departments. Win exciting cash prizes in each track!
+    </p>
+
+    <!-- Poster-style Scrolls Grid (Shows original poster theme) -->
+    <h3 style="text-align: center; color: var(--color-gold); margin-bottom: 25px; font-size: 1.5rem; text-transform: uppercase;">
+      <i class="fa-solid fa-scroll"></i> Symposium Event Scrolls
+    </h3>
+    
+    <div class="dept-grid" style="margin-bottom: 70px;">
+      <!-- CIVIL Scroll -->
+      <div class="dept-scroll">
+        <h3>CIVIL</h3>
+        <ul class="event-list-scroll">
+          <li>Paper Presentation</li>
+          <li>Tech Hunt</li>
+          <li>Bridge-It</li>
+          <li>Connections</li>
+        </ul>
+      </div>
+
+      <!-- CSE Scroll -->
+      <div class="dept-scroll">
+        <h3>CSE</h3>
+        <ul class="event-list-scroll">
+          <li>Paper Presentation</li>
+          <li>Code Debugging</li>
+          <li>Design Challenge</li>
+          <li>Photography</li>
+        </ul>
+      </div>
+
+      <!-- ECE Scroll -->
+      <div class="dept-scroll">
+        <h3>ECE</h3>
+        <ul class="event-list-scroll">
+          <li>Paper Presentation</li>
+          <li>Circuit Debugging</li>
+          <li>Robo Race</li>
+          <li>Squid Game</li>
+        </ul>
+      </div>
+
+      <!-- EEE Scroll -->
+      <div class="dept-scroll">
+        <h3>EEE</h3>
+        <ul class="event-list-scroll">
+          <li>Paper Presentation</li>
+          <li>Circuit Debugging</li>
+          <li>Line Follower</li>
+          <li>Connections</li>
+        </ul>
+      </div>
+
+      <!-- MECH Scroll -->
+      <div class="dept-scroll">
+        <h3>MECH</h3>
+        <ul class="event-list-scroll">
+          <li>Paper Presentation</li>
+          <li>Mr. Mechanical</li>
+          <li>Water Rocketry</li>
+          <li>Experts</li>
+        </ul>
+      </div>
+
+      <!-- IT Scroll -->
+      <div class="dept-scroll">
+        <h3>IT</h3>
+        <ul class="event-list-scroll">
+          <li>Paper Presentation</li>
+          <li>Tech Quest</li>
+          <li>BugSmash</li>
+          <li>Short Film</li>
+        </ul>
+      </div>
+
+      <!-- AIDS Scroll -->
+      <div class="dept-scroll">
+        <h3>AIDS</h3>
+        <ul class="event-list-scroll">
+          <li>Paper Presentation</li>
+          <li>Workshop</li>
+          <li>Reverse Coding</li>
+          <li>AI Music</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Interactive Event Explorer (Filter and Detail cards) -->
+    <div class="section-title">
+      <h2>Interactive <span>Event Explorer</span></h2>
+    </div>
+
+    <!-- Category Filter Controls -->
+    <div class="filter-container">
+      <button class="filter-btn active" data-filter="all">All Events</button>
+      <button class="filter-btn" data-filter="tech">Technical Events</button>
+      <button class="filter-btn" data-filter="nontech">Non-Technical Events</button>
+    </div>
+
+    <!-- Events Detailed Grid -->
+    <div class="dept-grid" id="events-grid-explorer">
+      
+      <!-- Event Card 1 -->
+      <div class="glass-card event-card-item" data-type="tech">
+        <div class="event-card">
+          <span class="event-type-badge type-tech">Technical</span>
+          <h3>Paper Presentation</h3>
+          <p>Present your innovative ideas and research papers in front of domain experts. Cover topics related to AI, IoT, sustainability, smart materials, or robotics.</p>
+          <div class="event-meta">
+            <span><i class="fa-solid fa-users"></i> Max 3 / team</span>
+            <span><i class="fa-solid fa-clock"></i> 7+3 mins</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event Card 2 -->
+      <div class="glass-card event-card-item" data-type="tech">
+        <div class="event-card">
+          <span class="event-type-badge type-tech">Technical</span>
+          <h3>Code Debugging / BugSmash</h3>
+          <p>Unravel code errors, locate logical flaws, and optimize programs in C, C++, Java, or Python. Speed and precision are your keys to victory.</p>
+          <div class="event-meta">
+            <span><i class="fa-solid fa-user"></i> Solo</span>
+            <span><i class="fa-solid fa-clock"></i> 45 mins</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event Card 3 -->
+      <div class="glass-card event-card-item" data-type="tech">
+        <div class="event-card">
+          <span class="event-type-badge type-tech">Technical</span>
+          <h3>Circuit Debugging</h3>
+          <p>Analyze faulty electronic networks, identify incorrect components on breadboards, and restore optimal functionality. Conducted by ECE & EEE.</p>
+          <div class="event-meta">
+            <span><i class="fa-solid fa-user-group"></i> Max 2 / team</span>
+            <span><i class="fa-solid fa-clock"></i> 60 mins</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event Card 4 -->
+      <div class="glass-card event-card-item" data-type="tech">
+        <div class="event-card">
+          <span class="event-type-badge type-tech">Technical</span>
+          <h3>Robo Race / Line Follower</h3>
+          <p>Navigate manual or autonomous robots through tricky tracks, loops, and obstacle-filled arenas. Fastest robot wins the grand cash prize.</p>
+          <div class="event-meta">
+            <span><i class="fa-solid fa-users"></i> Max 4 / team</span>
+            <span><i class="fa-solid fa-gauge"></i> Speed run</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event Card 5 -->
+      <div class="glass-card event-card-item" data-type="tech">
+        <div class="event-card">
+          <span class="event-type-badge type-tech">Technical</span>
+          <h3>Mr. Mechanical (CAD/CAM)</h3>
+          <p>Draft, model, and simulate mechanical components using modern 3D design software. Proving accuracy, constraint resolution, and efficiency.</p>
+          <div class="event-meta">
+            <span><i class="fa-solid fa-user"></i> Solo</span>
+            <span><i class="fa-solid fa-desktop"></i> CAD Lab</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event Card 6 -->
+      <div class="glass-card event-card-item" data-type="nontech">
+        <div class="event-card">
+          <span class="event-type-badge type-nontech">Non-Technical</span>
+          <h3>Tech Hunt / Tech Quest</h3>
+          <p>A high-octane riddle hunt around campus! Solve cryptic technical clues, decipher maps, and locate secret markers to claim the treasure.</p>
+          <div class="event-meta">
+            <span><i class="fa-solid fa-users"></i> 3 members / team</span>
+            <span><i class="fa-solid fa-map-location-dot"></i> Campus wide</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event Card 7 -->
+      <div class="glass-card event-card-item" data-type="nontech">
+        <div class="event-card">
+          <span class="event-type-badge type-nontech">Non-Technical</span>
+          <h3>Connections</h3>
+          <p>Identify names of technologies, companies, scientific theories, or movies by connecting a sequence of logical/humorous pictures.</p>
+          <div class="event-meta">
+            <span><i class="fa-solid fa-user-group"></i> Max 2 / team</span>
+            <span><i class="fa-solid fa-clock"></i> 30 mins</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event Card 8 -->
+      <div class="glass-card event-card-item" data-type="nontech">
+        <div class="event-card">
+          <span class="event-type-badge type-nontech">Non-Technical</span>
+          <h3>Squid Game (cyperX Special)</h3>
+          <p>Participate in a series of custom, physical, and mental strategy games. Outsmart the competition in a dramatic survival showdown.</p>
+          <div class="event-meta">
+            <span><i class="fa-solid fa-user"></i> Individual</span>
+            <span><i class="fa-solid fa-shield-halved"></i> Fun & Strategy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event Card 9 -->
+      <div class="glass-card event-card-item" data-type="nontech">
+        <div class="event-card">
+          <span class="event-type-badge type-nontech">Non-Technical</span>
+          <h3>Photography / Short Film</h3>
+          <p>Capture the essence of the symposium or showcase a thematic short film. Winners decided by aesthetic appeal, message, and editing quality.</p>
+          <div class="event-meta">
+            <span><i class="fa-solid fa-user-group"></i> Max 3 / team</span>
+            <span><i class="fa-solid fa-camera"></i> Submissions</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event Card 10 -->
+      <div class="glass-card event-card-item" data-type="tech">
+        <div class="event-card">
+          <span class="event-type-badge type-tech">Technical</span>
+          <h3>AI Music & Prompting</h3>
+          <p>Leverage generative AI prompt tools to compose thematic tracks or solve design questions under strict prompt limitations. Conducted by AIDS.</p>
+          <div class="event-meta">
+            <span><i class="fa-solid fa-user"></i> Solo</span>
+            <span><i class="fa-solid fa-microchip"></i> AI Lab</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="main-footer">
+    <div id="footer-grid">
+      <div>
+        <h3 style="color: var(--color-cyan); margin-bottom: 15px; font-family: var(--font-sans);">cyperX Symposium</h3>
+        <p style="font-size: 0.9rem;">
+          A national level student event celebrating innovation and technical proficiency. Organized by Adithya Institute of Technology, Coimbatore.
+        </p>
+      </div>
+      <div>
+        <h3 style="color: var(--color-cyan); margin-bottom: 15px; font-family: var(--font-sans);">Quick Links</h3>
+        <ul style="display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem;">
+          <li><a href="index.html" style="color: var(--text-gray);"><i class="fa-solid fa-chevron-right" style="font-size: 0.75rem; margin-right: 5px; color: var(--color-cyan);"></i> Home</a></li>
+          <li><a href="about.html" style="color: var(--text-gray);"><i class="fa-solid fa-chevron-right" style="font-size: 0.75rem; margin-right: 5px; color: var(--color-cyan);"></i> About AIT</a></li>
+          <li><a href="events.html" style="color: var(--text-gray);"><i class="fa-solid fa-chevron-right" style="font-size: 0.75rem; margin-right: 5px; color: var(--color-cyan);"></i> Departments & Events</a></li>
+          <li><a href="register.html" style="color: var(--text-gray);"><i class="fa-solid fa-chevron-right" style="font-size: 0.75rem; margin-right: 5px; color: var(--color-cyan);"></i> Registration Form</a></li>
+          <li><a href="contact.html" style="color: var(--text-gray);"><i class="fa-solid fa-chevron-right" style="font-size: 0.75rem; margin-right: 5px; color: var(--color-cyan);"></i> Contact Info</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="color: var(--color-cyan); margin-bottom: 15px; font-family: var(--font-sans);">Important Contact</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 8px;"><i class="fa-solid fa-location-dot" style="color: var(--color-gold); margin-right: 8px;"></i> Coimbatore, Tamil Nadu, India</p>
+        <p style="font-size: 0.9rem; margin-bottom: 8px;"><i class="fa-solid fa-envelope" style="color: var(--color-gold); margin-right: 8px;"></i> symposium_ait@adithyatech.com</p>
+      </div>
+    </div>
+    <div style="text-align: center; border-top: 1px solid rgba(18, 181, 203, 0.1); padding-top: 20px; font-size: 0.85rem; color: var(--text-muted);">
+      &copy; 2026 Adithya Institute of Technology. All Rights Reserved. Designed for cyperX.
+    </div>
+  </footer>
+
+  <!-- Script File -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Project Report - cyperX Symposium</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;600;700&display=swap');
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #e2e8f0;
+      font-family: 'Times New Roman', Times, serif;
+      color: #0f172a;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      padding: 18mm 20mm;
+      margin: 20px auto;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      position: relative;
+      page-break-after: always;
+      page-break-inside: avoid;
+      overflow: hidden;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+      .page {
+        margin: 0;
+        border: none;
+        box-shadow: none;
+        width: 210mm;
+        height: 297mm;
+        page-break-after: always;
+      }
+    }
+
+    /* Outer border line for formal assignment page */
+    .page-border {
+      border: 2px solid #1e293b;
+      height: 100%;
+      padding: 15px 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* College Header */
+    .college-header {
+      text-align: center;
+      position: relative;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 12px;
+      margin-bottom: 15px;
+    }
+
+    .doc-ref {
+      position: absolute;
+      top: -5px;
+      right: 0;
+      font-size: 0.8rem;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+    }
+
+    .college-title {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 1px;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .college-sub {
+      font-size: 0.78rem;
+      font-weight: bold;
+      color: #334155;
+      margin: 3px 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .college-highlight {
+      display: inline-block;
+      background: #0f172a;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 0.82rem;
+      padding: 2px 10px;
+      border-radius: 3px;
+      margin: 3px 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .dept-title {
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin: 15px 0 10px 0;
+    }
+
+    .assignment-type {
+      text-align: center;
+      font-size: 1.15rem;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    /* Student Table */
+    .details-table {
+      width: 90%;
+      margin: 0 auto 30px auto;
+      border-collapse: collapse;
+      font-size: 1.05rem;
+    }
+
+    .details-table td {
+      padding: 8px 5px;
+      vertical-align: top;
+    }
+
+    .details-table td.label {
+      font-weight: bold;
+      width: 38%;
+    }
+
+    .details-table td.colon {
+      width: 4%;
+      font-weight: bold;
+    }
+
+    .details-table td.val {
+      width: 58%;
+    }
+
+    /* Mark Circle */
+    .mark-box {
+      text-align: center;
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .mark-circle {
+      width: 100px;
+      height: 100px;
+      border: 2px solid #000;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .mark-circle::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      border-top: 2px solid #000;
+    }
+
+    .faculty-sig {
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    /* Cover Page 2 - Banner & Student Details */
+    .cover-banner {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 15px 0;
+      border: 1px solid #cbd5e1;
+    }
+
+    .project-main-title {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #0f172a;
+      margin: 15px 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .banner-graphic {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #38bdf8;
+      padding: 30px 20px;
+      border-radius: 12px;
+      text-align: center;
+      margin: 20px 0;
+      border: 2px solid #0284c7;
+    }
+
+    .banner-graphic h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.8rem;
+      margin: 0;
+      color: #38bdf8;
+      letter-spacing: 4px;
+      text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+    }
+
+    .banner-graphic p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem;
+      color: #94a3b8;
+      margin: 8px 0 0 0;
+      letter-spacing: 2px;
+    }
+
+    .student-block {
+      text-align: center;
+      margin-top: 30px;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    .student-block h3 {
+      margin: 5px 0;
+      font-size: 1.2rem;
+    }
+
+    /* Section Headings */
+    .section-title {
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 15px 0 10px 0;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 4px;
+    }
+
+    .sub-section-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin: 12px 0 6px 0;
+      text-transform: uppercase;
+    }
+
+    p.content-text {
+      text-align: justify;
+      line-height: 1.5;
+      font-size: 1rem;
+      margin: 6px 0;
+    }
+
+    ul.bullet-list {
+      margin: 6px 0 12px 20px;
+      padding: 0;
+      line-height: 1.5;
+      font-size: 0.98rem;
+    }
+
+    ul.bullet-list li {
+      margin-bottom: 6px;
+      text-align: justify;
+    }
+
+    /* Code Blocks */
+    .code-container {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      padding: 10px 14px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.82rem;
+      line-height: 1.35;
+      white-space: pre-wrap;
+      word-break: break-all;
+      border-radius: 4px;
+      height: 90%;
+      overflow: hidden;
+      color: #0f172a;
+    }
+
+    /* Screenshot Display */
+    .screenshot-img {
+      width: 100%;
+      height: 175mm;
+      object-fit: cover;
+      object-position: top;
+      border: 1px solid #64748b;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .shot-heading {
+      font-size: 1.15rem;
+      font-weight: bold;
+      text-align: center;
+      margin: 5px 0 10px 0;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= PAGE 1: COVER ASSIGNMENT PAGE ================= -->
+  <div class="page">
+    <div class="page-border">
+      <div class="college-header">
+        <div class="doc-ref">AIT/IQAC/Assignment</div>
+        <div class="college-title">ADITHYA INSTITUTE OF TECHNOLOGY</div>
+        <div class="college-sub">Approved by AICTE, New Delhi & Affiliated to Anna University, Chennai</div>
+        <div class="college-highlight">An Industry Integrated Institution</div>
+        <div class="college-sub">An Autonomous Institution & Accredited by NAAC with A+ Grade</div>
+      </div>
+
+      <div class="dept-title">Department of Computer Science and Engineering</div>
+
+      <div class="assignment-type">Mini Project</div>
+
+      <table class="details-table">
+        <tr>
+          <td class="label">Student Name</td>
+          <td class="colon">:</td>
+          <td class="val">Dhanashree J J</td>
+        </tr>
+        <tr>
+          <td class="label">Register Number</td>
+          <td class="colon">:</td>
+          <td class="val">7101241104006</td>
+        </tr>
+        <tr>
+          <td class="label">Year /Semester</td>
+          <td class="colon">:</td>
+          <td class="val">III / 05</td>
+        </tr>
+        <tr>
+          <td class="label">Academic Year</td>
+          <td class="colon">:</td>
+          <td class="val">2026-27</td>
+        </tr>
+        <tr>
+          <td class="label">Sub. Code</td>
+          <td class="colon">:</td>
+          <td class="val">024CS4303</td>
+        </tr>
+        <tr>
+          <td class="label">Sub. Name</td>
+          <td class="colon">:</td>
+          <td class="val">Web Design and Development</td>
+        </tr>
+        <tr>
+          <td class="label">Date of Submission</td>
+          <td class="colon">:</td>
+          <td class="val">08/10/2026</td>
+        </tr>
+      </table>
+
+      <div style="flex-grow: 1;"></div>
+
+      <div class="mark-box">
+        <span style="font-weight: bold; font-size: 1.2rem;">Mark:</span>
+        <div class="mark-circle"></div>
+      </div>
+
+      <div class="faculty-sig">Faculty Signature:</div>
+    </div>
+  </div>
+
+
+  <!-- ================= PAGE 2: TITLE & BANNER PAGE ================= -->
+  <div class="page">
+    <div class="page-border" style="text-align: center; justify-content: space-between;">
+      <div>
+        <div class="college-header">
+          <div class="college-title">ADITHYA INSTITUTE OF TECHNOLOGY</div>
+          <div class="college-sub">Approved by AICTE, New Delhi & Affiliated to Anna University, Chennai</div>
+          <div class="college-highlight">An Industry Integrated Institution</div>
+          <div class="college-sub">An Autonomous Institution & Accredited by NAAC with A+ Grade</div>
+        </div>
+
+        <div class="banner-graphic">
+          <h1>cyperX</h1>
+          <p>NATIONAL LEVEL TECHNICAL SYMPOSIUM</p>
+        </div>
+
+        <div class="project-main-title">
+          NATIONAL LEVEL TECHNICAL SYMPOSIUM MANAGEMENT SYSTEM
+        </div>
+      </div>
+
+      <div class="student-block">
+        <h3>NAME: DHANASHREE J J</h3>
+        <h3>REG. No: 7101241104006</h3>
+        <h3>YEAR/SEMESTER: III/05</h3>
+        <br>
+        <p style="font-weight: bold; margin: 0;">Vth SEMESTER B.E CSE STUDENTS (2024-2028)</p>
+        <p style="font-weight: bold; margin: 5px 0 0 0;">DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING</p>
+      </div>
+
+      <div></div>
+    </div>
+  </div>
+
+
+  <!-- ================= PAGE 3: ABSTRACT, OBJECTIVES & SCOPE ================= -->
+  <div class="page">
+    <div class="page-border">
+      <div class="section-title">ABSTRACTION</div>
+      <p class="content-text">
+        The <strong>cyperX - National Level Technical Symposium Management System</strong> is a full-stack web application developed to modernize and automate the event registration, query resolution, and administrative workflows for academic technical symposiums. By migrating from paper-based forms to a centralized digital portal, the system eliminates manual entry errors, accelerates registration, and provides instant data persistence using Python Flask and a MySQL relational database.
+      </p>
+
+      <div class="section-title">DESCRIPTION</div>
+      <p class="content-text">
+        The platform serves as an interactive communication bridge between student participants, event coordinators, and department faculty:
+      </p>
+      <ul class="bullet-list">
+        <li><strong>Participant Portal:</strong> Allows students from various institutions to explore technical and non-technical event details, select multiple event tracks, calculate registration fees, and choose payment methods.</li>
+        <li><strong>Query & Support Portal:</strong> Features a real-time contact form with direct database logging to ensure prompt communication with faculty coordinators.</li>
+        <li><strong>Backend Architecture:</strong> Built using Flask framework routing with RESTful endpoints (`/api/register`, `/api/contact`) linked to a MySQL database schema.</li>
+      </ul>
+
+      <div class="section-title">PROJECT OBJECTIVES</div>
+      <ul class="bullet-list">
+        <li><strong>Automation:</strong> To digitize the end-to-end event registration and query submission process.</li>
+        <li><strong>Database Integration:</strong> To securely store and index student registration data and inquiry messages in MySQL relational tables.</li>
+        <li><strong>User Experience:</strong> To deliver a sleek, modern, glassmorphic dark-mode web interface with interactive feedback dialogs.</li>
+        <li><strong>Cross-Platform Accessibility:</strong> To ensure optimal performance and responsive layout across desktop, tablet, and mobile browsers.</li>
+      </ul>
+
+      <div class="section-title">SCOPE OF THE PROJECT</div>
+      <ul class="bullet-list">
+        <li><strong>Student Registration Portal:</strong> Automated unique Registration ID generation, dynamic event selection, and instant confirmation dialogs.</li>
+        <li><strong>Event Catalog:</strong> Covers Paper Presentation, Code Debugging, Robo Race, Circuit Debugging, Short Film, and workshops.</li>
+        <li><strong>Database Schema:</strong> Relational schema enforcing primary keys and clean indexing for event entries and user submissions.</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- ================= PAGE 4: SAMPLE SOURCE CODE 1 ================= -->
+  <div class="page">
+    <div class="page-border">
+      <div class="section-title">SAMPLE SOURCE CODE - HTML FRONTEND</div>
+      <div class="code-container">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;cyperX - National Level Technical Symposium | Adithya Institute of Technology&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+  &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;
+&lt;/head&gt;
+&lt;body class="dark-theme"&gt;
+  &lt;!-- Header &amp; Navigation --&gt;
+  &lt;header class="glass-header"&gt;
+    &lt;div class="nav-container"&gt;
+      &lt;a href="index.html" class="brand-logo"&gt;
+        &lt;span class="cyper-text"&gt;cyper&lt;/span&gt;&lt;span class="x-text"&gt;X&lt;/span&gt;
+      &lt;/a&gt;
+      &lt;nav class="nav-menu"&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="index.html" class="active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="events.html"&gt;Events&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="register.html" class="nav-btn-highlight"&gt;Register Now&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;!-- Hero Section --&gt;
+  &lt;section class="hero-section"&gt;
+    &lt;div class="hero-content"&gt;
+      &lt;div class="badge-pill"&gt;&lt;i class="fa-solid fa-graduation-cap"&gt;&lt;/i&gt; Department of CSE Presents&lt;/div&gt;
+      &lt;h1 class="hero-title"&gt;National Level Technical Symposium &lt;span class="text-gradient"&gt;cyperX 2026&lt;/span&gt;&lt;/h1&gt;
+      &lt;p class="hero-desc"&gt;Join bright minds across the nation to compete, innovate, and excel in cutting-edge technical events, paper presentations, and coding challenges.&lt;/p&gt;
+      &lt;div class="hero-actions"&gt;
+        &lt;a href="register.html" class="btn btn-primary"&gt;Register Now &lt;i class="fa-solid fa-arrow-right"&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;a href="events.html" class="btn btn-outline"&gt;Explore Events&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+    </div>
+  </div>
+
+
+  <!-- ================= PAGE 5: SAMPLE SOURCE CODE 2 ================= -->
+  <div class="page">
+    <div class="page-border">
+      <div class="section-title">SAMPLE SOURCE CODE - FLASK BACKEND SERVER</div>
+      <div class="code-container">import os
+from datetime import datetime
+from flask import Flask, request, jsonify, send_from_directory
+import mysql.connector
+from dotenv import load_dotenv
+
+load_dotenv(override=True)
+
+app = Flask(__name__, static_folder='../frontendfolder')
+
+DB_HOST = os.getenv('DB_HOST', '127.0.0.1')
+DB_PORT = int(os.getenv('DB_PORT', '3306'))
+DB_USER = os.getenv('DB_USER', 'root')
+DB_PASSWORD = os.getenv('DB_PASSWORD', 'varun@12345')
+DB_NAME = os.getenv('DB_NAME', 'cyperx_db')
+PORT = int(os.getenv('PORT', '3000'))
+
+def init_db():
+    try:
+        conn = mysql.connector.connect(host=DB_HOST, port=DB_PORT, user=DB_USER, password=DB_PASSWORD)
+        cursor = conn.cursor()
+        cursor.execute(f"CREATE DATABASE IF NOT EXISTS {DB_NAME}")
+        cursor.close()
+        conn.close()
+        
+        conn = mysql.connector.connect(host=DB_HOST, port=DB_PORT, user=DB_USER, password=DB_PASSWORD, database=DB_NAME)
+        cursor = conn.cursor()
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS contact_messages (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                name VARCHAR(100),
+                email VARCHAR(100),
+                subject VARCHAR(255),
+                message TEXT,
+                submittedAt VARCHAR(50)
+            )
+        ''')
+        conn.commit()
+        cursor.close()
+        conn.close()
+        print("MySQL database schema checked successfully.")
+    except mysql.connector.Error as err:
+        print(f"Error checking MySQL schema: {err}")
+
+init_db()
+
+@app.route('/')
+def index():
+    return send_from_directory(app.static_folder, 'index.html')
+
+@app.route('/api/contact', methods=['POST'])
+def contact():
+    data = request.get_json() or request.form or {}
+    name, email, subject, message = data.get('name'), data.get('email'), data.get('subject'), data.get('message')
+    if not all([name, email, subject, message]):
+        return jsonify({'success': False, 'error': 'All fields are required.'}), 400
+
+    conn = mysql.connector.connect(host=DB_HOST, port=DB_PORT, user=DB_USER, password=DB_PASSWORD, database=DB_NAME)
+    cursor = conn.cursor()
+    cursor.execute('INSERT INTO contact_messages (name, email, subject, message, submittedAt) VALUES (%s, %s, %s, %s, %s)',
+                   (name.strip(), email.strip(), subject.strip(), message.strip(), datetime.now().isoformat()))
+    conn.commit()
+    cursor.close()
+    conn.close()
+    return jsonify({'success': True, 'message': 'Submitted successfully!'})
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=PORT, debug=True)</div>
+    </div>
+  </div>
+
+
+  <!-- ================= PAGE 6: SAMPLE SOURCE CODE 3 ================= -->
+  <div class="page">
+    <div class="page-border">
+      <div class="section-title">SAMPLE SOURCE CODE - MYSQL SCHEMA & JS LOGIC</div>
+      <div class="code-container">-- MySQL Database & Table Schema
+CREATE DATABASE IF NOT EXISTS cyperx_db;
+USE cyperx_db;
+
+-- Contact Queries Table
+CREATE TABLE IF NOT EXISTS contact_messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    subject VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    submittedAt VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Event Registrations Table
+CREATE TABLE IF NOT EXISTS registrations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    reg_id VARCHAR(50) UNIQUE NOT NULL,
+    fullname VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    department VARCHAR(100),
+    events TEXT,
+    payment_method VARCHAR(50),
+    registration_date DATE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+/* Frontend Event Handling Script Snippet */
+const contactForm = document.getElementById('contact-query-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(contactForm);
+    fetch('/api/contact', {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        alert("Your message has been sent successfully!");
+        contactForm.reset();
+      }
+    });
+  });
+}</div>
+    </div>
+  </div>
+
+
+  <!-- ================= PAGE 7: OUTPUT - HOME PAGE ================= -->
+  <div class="page">
+    <div class="page-border">
+      <div class="section-title">OUTPUT</div>
+      <div class="shot-heading">1. HOME PAGE</div>
+      <img src="screenshot_home.png" class="screenshot-img" alt="Home Page Screenshot">
+      <ul class="bullet-list">
+        <li>The web application is titled <strong>cyperX - National Level Technical Symposium</strong>, hosted by Adithya Institute of Technology.</li>
+        <li>It provides a centralized digital portal for students across institutions to explore event lineups, register online, and query coordinators.</li>
+        <li>The homepage features a sleek dark-themed UI with dynamic ambient gradients, pill-style highlights, and quick navigation links.</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- ================= PAGE 8: OUTPUT - ABOUT PAGE ================= -->
+  <div class="page">
+    <div class="page-border">
+      <div class="shot-heading">2. ABOUT PAGE</div>
+      <img src="screenshot_about.png" class="screenshot-img" alt="About Page Screenshot">
+      <ul class="bullet-list">
+        <li>This is the About page (about.html) of the cyperX platform, focusing on the mission and event background.</li>
+        <li>It states the objective of providing a transparent, efficient platform for students to participate in competitive events.</li>
+        <li>Highlights the department vision, NAAC A+ accreditation status of AIT, and historical success of the symposium.</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- ================= PAGE 9: OUTPUT - EVENTS PAGE ================= -->
+  <div class="page">
+    <div class="page-border">
+      <div class="shot-heading">3. EVENTS & REGISTRATION PAGE</div>
+      <img src="screenshot_events.png" class="screenshot-img" alt="Events Page Screenshot">
+      <ul class="bullet-list">
+        <li>Displays technical events (Paper Presentation, Code Debugging, Robo Race) and non-technical activities (Short Film, Quiz, Photography).</li>
+        <li>Includes interactive registration forms collecting student name, register number, department, events, and payment options.</li>
+        <li>Features instant validation and automated unique Registration ID badge generation.</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- ================= PAGE 10: OUTPUT - CONTACT PAGE ================= -->
+  <div class="page">
+    <div class="page-border">
+      <div class="shot-heading">4. CONTACT PAGE</div>
+      <img src="screenshot_contact.png" class="screenshot-img" alt="Contact Page Screenshot">
+      <ul class="bullet-list">
+        <li>This is the Contact page (contact.html) titled "Get in Touch", allowing users to submit inquiries directly to faculty coordinators.</li>
+        <li>Features an interactive contact form on the right connected directly to the MySQL database via Python Flask backend.</li>
+        <li>The left panel displays official college contact details, location map in Coimbatore, email addresses, and phone numbers.</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- ================= PAGE 11: CONCLUSION ================= -->
+  <div class="page">
+    <div class="page-border">
+      <div class="section-title">CONCLUSION</div>
+      <p class="content-text">
+        The implementation of the <strong>cyperX - National Level Technical Symposium Management System</strong> marks a significant advancement in modernizing event management within academic institutions. By replacing traditional, labor-intensive paper forms with an intuitive, web-based digital portal, the platform successfully bridges the communication gap between student participants, faculty coordinators, and department administrators. The frontend interface, crafted using HTML5, CSS3, and modern JavaScript, delivers a responsive, sleek, and user-friendly experience across all digital devices.
+      </p>
+      <p class="content-text">
+        Behind the visual presentation layer, the integration of a robust Python Flask backend framework empowers the platform to handle dynamic requests efficiently. The backend architecture handles request routing, input data validation, and secure database interactions, ensuring seamless client-server communication via RESTful endpoints. Coupled with a MySQL relational database system, all submitted contact inquiries and event registrations are persistently stored and indexed under strict referential integrity constraints.
+      </p>
+      <p class="content-text">
+        Furthermore, the system significantly enhances administrative efficiency by automating computational workloads. Rather than manually compiling hundreds of paper registration slips, administrative staff can access database records to review total registrations, event-wise participant counts, and inquiry logs instantaneously.
+      </p>
+      <p class="content-text">
+        In conclusion, the cyperX Symposium platform delivers a comprehensive, secure, and scalable web solution for modern academic events. By combining modern web design with a solid database pipeline, cyperX empowers students to participate seamlessly while equipping institutions with data-driven tools for academic excellence.
+      </p>
+
+      <div style="flex-grow: 1;"></div>
+
+      <div style="display: flex; justify-content: space-between; margin-top: 40px; font-weight: bold;">
+        <div>Date: 08/10/2026</div>
+        <div>Faculty Signature: __________________</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

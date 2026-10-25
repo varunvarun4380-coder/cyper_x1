@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code</title>
+    <style>
+        .qr-clickable {
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .qr-clickable:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(18, 181, 203, 0.4);
+        }
+        .qr-clickable:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align:center;">Scan to Register</h2>
+
+    <div style="text-align:center;">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&amp;data=upi%3A%2F%2Fpay%3Fpa%3D9751513576%40superyes%26pn%3DcyperX%26am%3D150%26cu%3DINR" alt="QR Code" width="250" class="qr-clickable">
+    </div>
+
+    <script>
+        document.querySelector('.qr-clickable').addEventListener('click', () => {
+            const pa = '9751513576@superyes';
+            const pn = 'cyperX';
+            const am = '150';
+            const cu = 'INR';
+            const upiLink = `upi://pay?pa=${pa}&pn=${encodeURIComponent(pn)}&am=${am}&cu=${cu}`;
+            
+            const isAndroid = /Android/i.test(navigator.userAgent);
+            const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+            const isMobile = isAndroid || isIOS || /webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isAndroid) {
+                window.location.href = `intent://pay?pa=${pa}&pn=${encodeURIComponent(pn)}&am=${am}&cu=${cu}#Intent;scheme=upi;package=com.google.android.apps.nbu.paisa.user;end`;
+            } else if (isIOS) {
+                window.location.href = `gpay://upi/pay?pa=${pa}&pn=${encodeURIComponent(pn)}&am=${am}&cu=${cu}`;
+            } else if (isMobile) {
+                window.location.href = upiLink;
+            } else {
+                window.location.href = upiLink;
+                setTimeout(() => {
+                    alert("📱 Scan this QR code using Google Pay / PhonePe / Paytm on your phone to complete your payment of ₹150.");
+                }, 300);
+            }
+        });
+    </script>
+</body>
+</html>

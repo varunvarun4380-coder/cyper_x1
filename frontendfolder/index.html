@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cyperX - National Level Technical Symposium | Adithya Institute of Technology</title>
+  <meta name="description"
+    content="Official website of cyperX - National Level Technical Symposium hosted by Adithya Institute of Technology, Coimbatore. Join us on March 14, 2026.">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- INTERNAL CSS DEMONSTRATION (Required by prompt constraints) -->
+  <style>
+    /* Internal CSS styles specific to home page visual enhancements */
+    .home-hero-glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(18, 181, 203, 0.15) 0%, transparent 70%);
+      top: 10%;
+      left: 5%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .animated-pulse-glow {
+      animation: pulseGlow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        opacity: 0.5;
+        transform: scale(0.95);
+      }
+
+      100% {
+        opacity: 0.9;
+        transform: scale(1.05);
+      }
+    }
+
+    .home-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(18, 181, 203, 0.1);
+      border: 1px solid rgba(18, 181, 203, 0.3);
+      padding: 6px 15px;
+      border-radius: 50px;
+      margin-bottom: 25px;
+      color: var(--color-cyan);
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    /* ---- AIT College Logo Styles ---- */
+    .ait-logo-block {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 10px 18px 10px 10px;
+      margin-bottom: 22px;
+      width: fit-content;
+      backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .ait-logo-block:hover {
+      border-color: rgba(18, 181, 203, 0.4);
+      background: rgba(18, 181, 203, 0.07);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(18, 181, 203, 0.15);
+    }
+
+    .ait-logo-img {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #fff;
+      padding: 4px;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .ait-logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .ait-logo-text .ait-name {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.2;
+    }
+
+    .ait-logo-text .ait-tagline {
+      font-size: 0.72rem;
+      color: var(--color-cyan);
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    /* Navbar AIT logo badge */
+    .nav-ait-logo {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      border-radius: 6px;
+      background: #fff;
+      padding: 3px;
+      margin-right: 4px;
+      vertical-align: middle;
+      display: inline-block;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- Top Bar for Announcements and Quick Links -->
+  <div class="top-bar">
+    <div class="top-bar-container">
+      <div class="top-bar-announcement">
+        <i class="fa-solid fa-bullhorn"></i> Paper Submission Deadline: <strong>March 10, 2026</strong>
+      </div>
+      <div class="top-bar-links">
+        <span>Quick Links:</span>
+        <a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+        <a href="events.html"><i class="fa-solid fa-scroll"></i> Events</a>
+        <a href="register.html"><i class="fa-solid fa-user-plus"></i> Register</a>
+        <a href="contact.html"><i class="fa-solid fa-phone"></i> Helpline</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header id="main-header">
+    <div id="nav-container">
+      <a href="index.html" id="nav-logo">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Adithya_Institute_of_Technology_%28logo%29.jpg/1280px-Adithya_Institute_of_Technology_%28logo%29.jpg"
+          alt="AIT Logo" class="nav-ait-logo" onerror="this.style.display='none'">
+        <i class="fa-solid fa-atom text-gradient"></i><span>cyperX</span>
+      </a>
+
+      <!-- Responsive Navigation Menu -->
+      <nav class="nav-links" id="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="events.html" class="nav-link">Events</a>
+        <a href="register.html" class="nav-link">Register</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div>
+        <a href="register.html" class="cta-btn">Register Now</a>
+        <button id="menu-toggle-btn" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Decorative Glow -->
+  <div class="home-hero-glow animated-pulse-glow"></div>
+
+  <!-- Main Content -->
+  <main>
+    <section class="container" style="padding-top: 20px; padding-bottom: 40px;">
+      <!-- Hero Section -->
+      <div class="hero">
+        <div class="hero-text">
+          <!-- Official College Logo Block -->
+          <a href="https://adithyatech.edu.in" target="_blank" rel="noopener" class="ait-logo-block">
+            <img id="ait-hero-logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Adithya_Institute_of_Technology_%28logo%29.jpg/1280px-Adithya_Institute_of_Technology_%28logo%29.jpg"
+              alt="Adithya Institute of Technology Official Logo" class="ait-logo-img"
+              onerror="this.onerror=null; this.src=''; this.outerHTML='<span style=\'display:flex;align-items:center;justify-content:center;width:110px;height:110px;border-radius:8px;background:#fff;font-size:2.4rem;\'>🎓</span>';">
+            <div class="ait-logo-text">
+              <span class="ait-name">Adithya Institute of Technology</span>
+              <span class="ait-tagline">AICTE Approved &bull; Anna University &bull; NAAC A+</span>
+            </div>
+          </a>
+
+          <div class="home-hero-badge">
+            <i class="fa-solid fa-calendar-days"></i> March 14, 2026
+          </div>
+
+
+
+          <div class="hero-badge-container">
+            <span class="badge">Approved by AICTE</span>
+            <span class="badge">Affiliated to Anna University</span>
+            <span class="badge auton">Autonomous Status</span>
+            <span class="badge auton">NAAC A+ Accredited</span>
+          </div>
+
+          <h1 class="hero-title-main">
+            <span>A National Level Technical Symposium</span>
+            cyper<span class="highlight-gold">X</span>
+          </h1>
+
+          <p class="hero-desc">
+            An Industry Integrated Institution. Join us for a grand showcase of engineering excellence, coding
+            challenges, robotics racing, and tech innovations. Compete with the brightest minds and win exciting cash
+            prizes!
+          </p>
+
+          <div class="btn-group">
+            <a href="register.html" class="cta-btn" style="text-align: center;">Secure Your Spot</a>
+            <a href="events.html" class="btn-secondary">Explore Events</a>
+          </div>
+        </div>
+
+        <div class="hero-graphics">
+          <div class="hologram-container">
+            <div class="hologram-circle"></div>
+            <div class="hologram-inner"></div>
+            <div class="hologram-text">cyper<br>X</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Info Strip -->
+      <div class="info-strip">
+        <!-- INLINE CSS DEMONSTRATION (Required by prompt constraints) -->
+        <div class="glass-card strip-item" style="border-left: 4px solid var(--color-gold);">
+          <div class="strip-icon">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+          </div>
+          <div class="strip-content">
+            <h3>Registration Fee</h3>
+            <p><strong>Rs. 150/- only</strong></p>
+            <p style="font-size: 0.85rem; margin-bottom: 0;">Includes: Kit, Certificate, Refreshment & Lunch</p>
+          </div>
+        </div>
+
+        <div class="glass-card strip-item" style="border-left: 4px solid var(--color-cyan);">
+          <div class="strip-icon">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+          <div class="strip-content">
+            <h3>Cash Prizes</h3>
+            <p><strong>Exciting Rewards!</strong></p>
+            <p style="font-size: 0.85rem; margin-bottom: 0;">Cash prizes for top performing teams in all events.</p>
+          </div>
+        </div>
+
+        <div class="glass-card strip-item" style="border-left: 4px solid var(--color-orange);">
+          <div class="strip-icon">
+            <i class="fa-solid fa-file-invoice"></i>
+          </div>
+          <div class="strip-content">
+            <h3>Important Dates</h3>
+            <p>Paper Submission: <strong>March 10, 2026</strong></p>
+            <p style="font-size: 0.85rem; margin-bottom: 0;">Acceptance Intimation: <strong>March 12, 2026</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Highlight Banner -->
+      <div class="glass-card"
+        style="text-align: center; margin-bottom: 40px; padding: 40px; background: linear-gradient(135deg, rgba(2, 44, 61, 0.9) 0%, rgba(0, 75, 92, 0.4) 100%);">
+        <h2
+          style="font-size: 1.8rem; color: var(--color-gold); margin-bottom: 15px; text-transform: uppercase; font-family: var(--font-sans);">
+          Spot Registration Available!</h2>
+        <p style="max-width: 700px; margin: 0 auto 25px; color: var(--text-gray);">
+          Can't register online in time? Don't worry! Spot registration counters will be open on campus from 8:00 AM on
+          March 14, 2026. However, online registration is highly recommended to secure lunch tokens and kits in advance.
+        </p>
+        <div
+          style="display: inline-block; background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 10px;">
+
+          <div style="text-align:center;">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&amp;data=upi%3A%2F%2Fpay%3Fpa%3D9751513576%40superyes%26pn%3DcyperX%26am%3D150%26cu%3DINR" alt="QR Code" width="250" class="qr-clickable">
+          </div>
+
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Scan QR
+          to Pay Directly</p>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="main-footer">
+    <div id="footer-grid">
+      <div>
+        <h3 style="color: var(--color-cyan); margin-bottom: 15px; font-family: var(--font-sans);">cyperX Symposium
+        </h3>
+        <p style="font-size: 0.9rem;">
+          A national level student event celebrating innovation and technical proficiency. Organized by Adithya
+          Institute of Technology, Coimbatore.
+        </p>
+      </div>
+      <div>
+        <h3 style="color: var(--color-cyan); margin-bottom: 15px; font-family: var(--font-sans);">Quick Links</h3>
+        <ul style="display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem;">
+          <li><a href="index.html" style="color: var(--text-gray);"><i class="fa-solid fa-chevron-right"
+                style="font-size: 0.75rem; margin-right: 5px; color: var(--color-cyan);"></i> Home</a></li>
+          <li><a href="about.html" style="color: var(--text-gray);"><i class="fa-solid fa-chevron-right"
+                style="font-size: 0.75rem; margin-right: 5px; color: var(--color-cyan);"></i> About AIT</a></li>
+          <li><a href="events.html" style="color: var(--text-gray);"><i class="fa-solid fa-chevron-right"
+                style="font-size: 0.75rem; margin-right: 5px; color: var(--color-cyan);"></i> Departments & Events</a>
+          </li>
+          <li><a href="register.html" style="color: var(--text-gray);"><i class="fa-solid fa-chevron-right"
+                style="font-size: 0.75rem; margin-right: 5px; color: var(--color-cyan);"></i> Registration Form</a></li>
+          <li><a href="contact.html" style="color: var(--text-gray);"><i class="fa-solid fa-chevron-right"
+                style="font-size: 0.75rem; margin-right: 5px; color: var(--color-cyan);"></i> Contact Info</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="color: var(--color-cyan); margin-bottom: 15px; font-family: var(--font-sans);">Important Contact</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 8px;"><i class="fa-solid fa-location-dot"
+            style="color: var(--color-gold); margin-right: 8px;"></i> Coimbatore, Tamil Nadu, India</p>
+        <p style="font-size: 0.9rem; margin-bottom: 8px;"><i class="fa-solid fa-envelope"
+            style="color: var(--color-gold); margin-right: 8px;"></i> symposium_ait@adithyatech.com</p>
+      </div>
+    </div>
+    <div
+      style="text-align: center; border-top: 1px solid rgba(18, 181, 203, 0.1); padding-top: 20px; font-size: 0.85rem; color: var(--text-muted);">
+      &copy; 2026 Adithya Institute of Technology. All Rights Reserved. Designed for cyperX.
+    </div>
+  </footer>
+
+  <!-- Script File -->
+  <script src="script.js"></script>
+</body>
+
+</html>
